@@ -1,0 +1,57 @@
+{
+  "id": "investment-screening-v3.1",
+  "name": "全球视野高胜率前瞻性投资标的筛选",
+  "description": "基于巴菲特+李嘉诚投资哲学，整合全球多市场、多资产类别，建立量化事件影响权重评估体系、政治关联交易监控、内幕交易识别，并强化前瞻性分析（识别穿针行为、技术面超跌、认知差机会），确保90%以上长期赚钱概率的投资标的筛选全流程",
+  "version": "3.1",
+  "author": "AI Assistant",
+  "tags": ["投资", "股票", "资产配置", "风险管理", "全球宏观", "政治关联", "内幕交易", "前瞻性分析", "穿针识别"],
+  "capabilities": [
+    "全球多语言信息收集与监控",
+    "全球事件-资产影响权重评估",
+    "政治关联交易监控",
+    "内幕交易与异常交易识别",
+    "前瞻性分析-穿针行为识别",
+    "技术面超跌机会挖掘",
+    "认知差与第二曲线发现",
+    "全球股市估值与风险评估",
+    "地缘政治风险预测与应对",
+    "资产配置与风险控制"
+  ],
+  "entry": "prompt.md",
+  "tools": ["WebSearch", "WebFetch"],
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "task": {
+        "type": "string",
+        "enum": ["screen_stock", "event_impact", "political_check", "insider_check", "portfolio_allocation", "full_analysis", "needle_identification", "forward_looking_screen"],
+        "description": "筛选任务类型"
+      },
+      "stock_code": {
+        "type": "string",
+        "description": "股票代码或名称"
+      },
+      "market": {
+        "type": "string",
+        "enum": ["US", "CN", "HK", "JP", "EU", "UK", "IN", "AU", "BR", "OTHER"],
+        "description": "市场"
+      },
+      "event_type": {
+        "type": "string",
+        "enum": ["global_systemic", "policy_change", "political_trade", "geopolitical", "insider_investigation", "economic_data", "company_specific"],
+        "description": "事件类型"
+      },
+      "asset_class": {
+        "type": "string",
+        "enum": ["US_Treasury", "Gold", "Crude_Oil", "Copper", "SP500", "NASDAQ", "CN_A_Shares", "HK_Stocks", "EU_Stocks", "JP_Stocks", "Emerging_Markets", "USD_Index", "CNY"],
+        "description": "资产类别"
+      },
+      "analysis_focus": {
+        "type": "string",
+        "enum": ["value", "growth", "dividend", "turnaround", "contrarian"],
+        "description": "分析重点"
+      }
+    },
+    "required": ["task"]
+  }
+}
