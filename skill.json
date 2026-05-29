@@ -1,12 +1,13 @@
 {
-  "id": "investment-screening-v3.1",
+  "id": "investment-screening-v4.0",
   "name": "全球视野高胜率前瞻性投资标的筛选",
-  "description": "基于巴菲特+李嘉诚投资哲学，整合全球多市场、多资产类别，建立量化事件影响权重评估体系、政治关联交易监控、内幕交易识别，并强化前瞻性分析（识别穿针行为、技术面超跌、认知差机会），确保90%以上长期赚钱概率的投资标的筛选全流程",
-  "version": "3.1",
+  "description": "基于巴菲特+李嘉诚投资哲学，整合全球多市场、多资产类别，建立量化事件影响权重评估体系、政治关联交易监控、内幕交易识别，并强化前瞻性分析（识别穿针行为、技术面超跌、认知差机会），确保90%以上长期赚钱概率的投资标的筛选全流程。V4.0新增实时数据获取机制与自我进化学习能力",
+  "version": "4.0",
   "author": "AI Assistant",
-  "tags": ["投资", "股票", "资产配置", "风险管理", "全球宏观", "政治关联", "内幕交易", "前瞻性分析", "穿针识别"],
+  "tags": ["投资", "股票", "资产配置", "风险管理", "全球宏观", "政治关联", "内幕交易", "前瞻性分析", "穿针识别", "实时数据", "自我进化"],
   "capabilities": [
     "全球多语言信息收集与监控",
+    "实时数据获取与验证",
     "全球事件-资产影响权重评估",
     "政治关联交易监控",
     "内幕交易与异常交易识别",
@@ -15,16 +16,18 @@
     "认知差与第二曲线发现",
     "全球股市估值与风险评估",
     "地缘政治风险预测与应对",
-    "资产配置与风险控制"
+    "资产配置与风险控制",
+    "自我进化与学习机制",
+    "经验总结与策略优化"
   ],
   "entry": "prompt.md",
-  "tools": ["WebSearch", "WebFetch"],
+  "tools": ["WebSearch", "WebFetch", "Read", "Write"],
   "input_schema": {
     "type": "object",
     "properties": {
       "task": {
         "type": "string",
-        "enum": ["screen_stock", "event_impact", "political_check", "insider_check", "portfolio_allocation", "full_analysis", "needle_identification", "forward_looking_screen"],
+        "enum": ["screen_stock", "event_impact", "political_check", "insider_check", "portfolio_allocation", "full_analysis", "needle_identification", "forward_looking_screen", "self_evolution", "update_knowledge"],
         "description": "筛选任务类型"
       },
       "stock_code": {
@@ -50,8 +53,29 @@
         "type": "string",
         "enum": ["value", "growth", "dividend", "turnaround", "contrarian"],
         "description": "分析重点"
+      },
+      "learning_mode": {
+        "type": "boolean",
+        "description": "是否启用学习模式，记录经验并优化策略",
+        "default": true
       }
     },
     "required": ["task"]
+  },
+  "self_evolution": {
+    "enabled": true,
+    "learning_log_path": "learning_log.md",
+    "strategy_update_path": "strategy_updates.md",
+    "experience_retention": {
+      "successful_cases": "记录成功预测的案例，分析成功因素",
+      "failed_cases": "记录预测失误的案例，分析失败原因",
+      "pattern_recognition": "识别市场规律与模式，形成经验法则"
+    },
+    "auto_update_rules": [
+      "每次分析后自动评估预测准确性",
+      "定期（每周）回顾总结，提炼经验教训",
+      "根据新数据调整权重系数与阈值",
+      "优化穿针识别checklist的准确性"
+    ]
   }
 }
